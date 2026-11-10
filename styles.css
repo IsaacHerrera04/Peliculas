@@ -1,0 +1,299 @@
+
+/*Estilos propios
+Se carga DESPUÉS de Bootstrap, así que sobrescribe lo necesario.*/
+
+:root {
+    color-scheme: dark;
+    --bg: #101512;
+    --surface: #171f1a;
+    --surface-soft: #1d2922;
+    --surface-hover: #24352a;
+    --green: #426b50;
+    --green-light: #8fb69a;
+    --green-bright: #b8d6bd;
+    --text: #edf2ed;
+    --text-muted: #a9b6ac;
+    --star: #f2d04b;
+    --border: rgba(174, 205, 181, 0.16);
+    --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+    --radius: 16px;
+    --content-width: 1180px;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 12% 0%, rgba(49, 88, 61, 0.16), transparent 34rem),
+        var(--bg);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.fg-primary { color: var(--green-bright) !important; }
+.fg-success { color: var(--green-light) !important; }
+.fg-warning { color: var(--star) !important; }
+.fg-danger  { color: var(--text-muted) !important; }
+
+.btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.btn-large {
+    padding: 12px 28px;
+    font-size: 1rem;
+}
+
+.btn-primary,
+.btn-card {
+    background-color: var(--green-light);
+    color: var(--bg);
+    border-color: var(--green-light);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text);
+    border-color: var(--green-light);
+}
+
+.btn:hover,
+.btn:focus-visible {
+    outline: 2px solid var(--green-light);
+    outline-offset: 2px;
+}
+
+
+#site-header {
+    position: sticky;
+    top: 0;
+    z-index: 5000;
+    padding: 0.5rem;
+    background-color: var(--surface-soft);
+    border-bottom: 2px ridge var(--surface-hover);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: var(--text);
+}
+
+.navbar-toggler {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+}
+
+.drawer {
+    background-color: var(--surface-soft);
+    color: var(--text);
+}
+
+.navbar .nav-link {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    margin: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    background-color: var(--surface-hover);
+}
+
+.menu {
+    background-color: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.menu-item:hover {
+    background-color: var(--surface-hover);
+}
+
+.form-control {
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+
+#hero {
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 4rem 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background-color: var(--surface);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 12% 0%, var(--surface-hover), transparent 34rem),
+        linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.35));
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 800px;
+}
+
+.hero-tag {
+    background-color: var(--surface-hover);
+    color: var(--text);
+    padding: 0.5rem 1.25rem;
+    border: 1px solid var(--green-bright);
+    border-radius: 10px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.125rem);
+    line-height: 1.15;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+}
+
+.hero-description {
+    color: var(--text-muted);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+
+.section-title {
+    font-size: 1.75rem;
+}
+
+.tagline {
+    color: var(--text-muted);
+}
+
+#catalog,
+#about {
+    margin-bottom: 2rem;
+}
+
+.card {
+    background:
+        radial-gradient(ellipse at 12% 0%, var(--surface-hover), transparent 34rem),
+        var(--surface-soft);
+    color: var(--text);
+    border: 1px solid var(--green);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background-color: var(--surface);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.card-body > div.card-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-text {
+    margin: 0;
+}
+
+.card-badge {
+    align-self: flex-start;
+    background-color: var(--green);
+    color: var(--text);
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.card-footer {
+    padding: 1rem;
+    background: transparent;
+    border-top: 1px solid var(--border);
+}
+
+
+.featured .card {
+    border-color: var(--green-light);
+    box-shadow: var(--shadow);
+}
+
+
+#site-footer {
+    margin-top: 3rem;
+    padding: 2rem 1rem;
+    background-color: var(--surface-soft);
+    border-top: 2px ridge var(--surface-hover);
+    color: var(--text-muted);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--green-bright);
+}
+
+
+@media (max-width: 780px) {
+    #hero {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+}
